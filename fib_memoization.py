@@ -1,17 +1,20 @@
-def fib(n):
+def fib(n,memo={}):## map for memoization to lookup already calculated subproblems
     ''' main problem is to find the nth fibonacci number,
 it can be broken down into adding two consecutive numbers to get next fib numbers
 '''
-    memo={}## map for memoization to lookup already calculated subproblems
-    if n<=2:
-        return 1
     if n in memo:
         return memo[n]
+    if n<=2:
+        return 1
+
     else:
-        value=fib(n-1)+fib(n-2)
+        value=fib(n-1,memo)+fib(n-2,memo)
         memo[n]=value
         return value
 
-print(fib(8))
+print(fib(10))
+print(fib(50))
+print(fib(6))
+print(fib(7))
 
 
