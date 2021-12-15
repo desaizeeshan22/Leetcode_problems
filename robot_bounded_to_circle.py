@@ -17,9 +17,9 @@ def isRobotBounded(self, instructions):
     for i in instructions:
         if i == "L":
             idx = (idx + 3) % 4
-        if i == "R":
+        elif i == "R":
             idx = (idx + 1) % 4
         else:
             x += directions[idx][0]
             y += directions[idx][1]
-    return (x == 0 or y == 0) or idx != 0
+    return (x == 0 and y == 0) or idx != 0
