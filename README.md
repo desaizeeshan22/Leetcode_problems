@@ -21,6 +21,8 @@ main problem from the bottom to the top
 6)Fill the further postitions used on current position
 
 
+
+
 DP(Top down)(break the main problems into subproblems by calling the function recursively from the main problem to the
 sub problems at every recursive call till you reach the base case or trivial case)
 (use memoization to optimize the brute force strategy):
