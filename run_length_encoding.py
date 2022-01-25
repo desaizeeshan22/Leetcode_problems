@@ -17,5 +17,5 @@ def length_encoding(input_list):
                     i+=1
             count=1
     return input_list
-print(length_encoding(input_list))
-        
+
+print(reverse([1, 3, 8, 4,7,6,5,1]))
