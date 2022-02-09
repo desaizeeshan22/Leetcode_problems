@@ -6,7 +6,7 @@ def all_factors(num):
             factors.add(i)
         i+=1
     while i>=1:
-        if num % i == 0:
+        if num%i == 0:
             factors.add(num//i)
         i -= 1
     return factors
