@@ -37,8 +37,9 @@ def is_possible(arr,threshold,k):
 
     return False if student_allocated>k else True
 def optimized(arr,k):
-    lo=min(arr) ## if every book is assigned to one student each value becomes the num pages of the
-                # book itself so the min of each max aka the num pages here is the min value of array
+    lo=max(arr) ## if every book is assigned to one student each value becomes the num pages of the
+                # book itself so the  the num pages here is the max value of array as that is the only max
+                ##available
     hi=sum(arr) ## if all the books are assigned to one student then the pages assigned is the sum
                 # of all pages
     res=-1
