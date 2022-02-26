@@ -13,9 +13,11 @@ def long_sub_array_efficient(arr,k):
     max_len=0
     for i in range(len(arr)):
         sum_+=arr[i]
+        if sum_ == k:
+            max_len = i + 1
         if  sum_-k in hash_map:
             max_len=max(i+1-hash_map[sum_-k],max_len)
-        else:
+        elif sum_ not in hash_map:
             hash_map[sum_] = i + 1
     return max_len
 print("efficient  "+str(long_sub_array_efficient([5,8,-4,-4,9,-2,2],0)))
