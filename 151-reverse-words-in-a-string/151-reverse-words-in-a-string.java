@@ -11,7 +11,15 @@ class Solution {
         }
     public StringBuilder rem_spaces(char[] t){
         StringBuilder sb = new StringBuilder();
-        for(int i=0;i<t.length;i++){
+        int left=0;
+        while(t[left]==' '){
+            left++;
+        }
+        int right=t.length-1;
+        while(t[right]==' '){
+            right--;
+        }
+        for(int i=left;i<=right;i++){
             if(t[i]!=' '){
                 sb.append(t[i]);
             }
@@ -24,8 +32,7 @@ class Solution {
     public String reverseWords(String s) {
         int j=0;
         int i=0;
-        String t=s.trim();
-        char[]c=t.toCharArray();
+        char[]c=s.toCharArray();
         while(j<c.length){
             if(c[j]==' '){
                 reverse(c,i,j-1);
