@@ -16,17 +16,12 @@ class Solution {
             curr=curr.next;
             length++;
         }
-        if(length==1){
-            head=head.next;
-            return head;
-        }
         curr=head;
-        if(length==n){
+        if(length==n||length==1){
             head=head.next;        
             return head;
         }
         int i=0;
-        
         while(i<(length-n)-1){
             curr=curr.next;
             i+=1;
