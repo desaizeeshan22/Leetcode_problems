@@ -11,17 +11,32 @@
  */
 public class Solution {
     public ListNode detectCycle(ListNode head) {
-        Map<ListNode,Integer>hashTable=new HashMap<ListNode,Integer>();
-        int count=0;
-        ListNode curr=head;
-        while(curr!=null){
-            if(hashTable.containsKey(curr)){
-                return curr;
+        if(head==null){
+            return null;
+        }
+        ListNode intersection=this.IntersectionSlowFast(head);
+        if(intersection==null){
+            return null;
+        }
+        ListNode ptr1=head;
+        ListNode ptr2=intersection;
+        while(ptr1!=ptr2){
+            ptr1=ptr1.next;
+            ptr2=ptr2.next;
+        }
+        return ptr1;
+    }
+    public ListNode IntersectionSlowFast(ListNode head){
+        ListNode slow=head;
+        ListNode fast=head;
+        while(fast!=null&&fast.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+            if(slow==fast){
+                return slow;
             }
-            hashTable.put(curr,count);
-            count+=1;
-            curr=curr.next;
         }
         return null;
+        
     }
 }
