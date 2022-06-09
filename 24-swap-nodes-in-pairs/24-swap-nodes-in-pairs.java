@@ -12,7 +12,6 @@ class Solution {
     public ListNode swapPairs(ListNode head) {
         ListNode curr=head;
         ListNode prevFirst=null;
-        boolean firstPass=true;
         while(curr!=null){
                int k=2;
                ListNode currHead=curr;
@@ -24,7 +23,7 @@ class Solution {
                    curr=temp;
                    k--;
                }
-            if(firstPass){head=prev;firstPass=false;}
+            if(prevFirst==null){head=prev;}
             else{prevFirst.next=prev;}
             prevFirst=currHead;
         }
