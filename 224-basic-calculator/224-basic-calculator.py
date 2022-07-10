@@ -5,7 +5,8 @@ class Solution:
         # If stack is empty or the expression starts with
         # a symbol, then append 0 to the stack.
         # i.e. [1, '-', 2, '-'] becomes [1, '-', 2, '-', 0]
-        if not stack or type(stack[-1]) == str:
+       
+        if not stack or type(stack[-1])!=int:
             stack.append(0)
             
         res = stack.pop()
@@ -19,7 +20,7 @@ class Solution:
                 res -= stack.pop()
         return res       
 
-    def calculate(self, s: str) -> int:
+    def calculate(self, s):
 
         stack = []
         n, operand = 0, 0
